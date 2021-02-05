@@ -1,22 +1,21 @@
-require("./config");
+require("./config")
 
-const express = require("express");
-const bodyParser = require("body-parser");
+const express = require("express")
+const bodyParser = require("body-parser")
 
-const routes = require("./routes");
+const routes = require("./routes")
 
-const app = express();
+const app = express()
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
-app.use("/api", routes.test);
+app.use("/api", routes.test)
 
 app.listen(process.env.PORT, (error) => {
+  if (error) {
+    console.log(error)
+  }
 
-    if (error) {
-        console.log(error)
-    }
-
-    console.log(`Server Online -> PORT: ${process.env.PORT}`);
-});
+  console.log(`Server Online -> PORT: ${process.env.PORT}`)
+})

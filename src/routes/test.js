@@ -1,12 +1,12 @@
-const express = require("express");
-const cors = require("cors");
+const express = require("express")
+const cors = require("cors")
 
-const { test: controller } = require("../controllers");
-const { test:  validator } = require("../validations")
+const { test: controller } = require("../controllers")
+const { test: validator } = require("../validations")
 
-const router = express.Router();
+const router = express.Router()
 
-router.get("/test", validator.test , cors(), controller.getTest);
-router.get("/testApi", cors(), controller.getTestApi);
+router.get("/test", validator.test, cors(), controller.getTest)
+router.get("/testApi", cors(), controller.getTestApi)
 
-module.exports = router;
+module.exports = router
